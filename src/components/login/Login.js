@@ -2,9 +2,10 @@ import { useState } from "react"
 import * as authService from "../../services/auth"
 import { useDispatch } from "react-redux";
 import { signInStart, signInSuccess } from "../../redux/userSlice";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         email: '',
         password:''
@@ -26,6 +27,7 @@ const Login = () => {
             const data = await authService.login(form)
             dispatch(signInSuccess(data))
             console.log('sekme')
+            navigate('/dashboard')
 
         }catch(err){
             console.log(err)
@@ -50,6 +52,8 @@ const Login = () => {
                         <label className="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
                     <button type="submit"  className="btn btn-primary">Submit</button>
+                    <Link to="/register">
+                    <button className="btn btn-primary ">Jei neturi paskyros gali susikurti</button></Link>
                 </form>
             </div>
         </>
