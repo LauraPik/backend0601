@@ -25,7 +25,7 @@ export default function Dashboard() {
   return (
     <div>
       {data.map((expense) => {
-        return <DashboardElem exp={expense} />;
+        return <DashboardElem key={expense._id} exp={expense} />;
       })}
     </div>
   );

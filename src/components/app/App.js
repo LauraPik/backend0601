@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../register/Register";
 import Dashboard from "../dashboard/Dashboard";
 import AdminPage from "../adminPage/AdminPage";
+import CategoryElmUpdate from "../categoryElmUpdate/CategoryElmUpdate";
 
 function App() {
   return (

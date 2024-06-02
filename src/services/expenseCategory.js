@@ -37,7 +37,7 @@ export const updateExpensesCategory = async (token, id, data) => {
         "content-type": "application/json",
         authorization: "Bearer " + token,
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ title: data }),
     });
     return await res.json();
   } catch (err) {
