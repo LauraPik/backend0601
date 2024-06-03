@@ -22,9 +22,7 @@ const bcryptjs = require('bcryptjs');
           if (!username) {
             throw new Error("Please provide name");
           }
-          if (!role) {
-            throw new Error("Please provide your role");
-          }
+         
       
           const salt = bcryptjs.genSaltSync(10);
           const hashPassword = await bcryptjs.hashSync(password, salt);
